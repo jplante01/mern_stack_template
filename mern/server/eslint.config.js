@@ -7,11 +7,12 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node  // Add Node.js globals
+        ...globals.node, // Add Node.js globals
       },
       ecmaVersion: 2022,
-      sourceType: "module"
-    }
+      sourceType: "module",
+    },
   },
   pluginJs.configs.recommended,
+  prettier,
 ];
