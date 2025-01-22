@@ -25,5 +25,8 @@ MONGODB_URI_PROD=""
 MONGODB_URI_DEV='mongodb://127.0.0.1:27017/test'
 PORT=5050
 
-# Install ESLint
+# Install ESLint & Prettier
 Need to configure ESLint to recognize Node.js global variables like process.
+
+# Verify db connection
+- Run server.js
