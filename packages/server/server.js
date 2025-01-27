@@ -17,6 +17,6 @@ app.use('/api/tasks', taskRoutes);
 app.use('/api/users', userRoutes);  
 
 // start the Express server
-app.listen(PORT, () => {
+  app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
