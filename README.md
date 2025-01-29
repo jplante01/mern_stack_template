@@ -1,18 +1,5 @@
-## Server
 
-### Dependencies
- - mongodb
- - express
- - cors
-
- # Create server.js
- - Create `./mern/server/server.js`
-
- # Connect to Mongodb instance(local)
-  - Create `/server/db/connection.js
-    - Pulls in the connection string from .env
-    - `connectDatabase` function is exported
-
+# Connect to Mongodb instance(local)
   - Start local mongo instance
     ```
     sudo systemctl start mongod
@@ -25,8 +12,12 @@ MONGODB_URI_PROD=""
 MONGODB_URI_DEV='mongodb://127.0.0.1:27017/test'
 PORT=5050
 
-# Install ESLint & Prettier
-Need to configure ESLint to recognize Node.js global variables like process.
 
-# Verify db connection
-- Run server.js
+# Verify db connection in development
+- Seed the database
+  - Start your local mongod instance(This will destroy any collections named `test`)
+  - Verify MONGODB_URI_DEV is set correctly
+  - import the seed data. Run from project root:
+    - !!DO NOT EXECUTE THIS COMMAND ON YOUR PRODUCTION DB, IT WILL DROP THE DATABASE!!
+    - `mongoimport --db test --collection users --file packages/server/db/users-seed.json --jsonArray --drop && mongoimport --db test --collection tasks --file packages/server/db/tasks-seed.json --jsonArray --drop`
+  - Run server.js

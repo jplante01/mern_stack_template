@@ -1,0 +1,29 @@
+[
+  {
+    "_id": {"$oid": "65b5f3584f4b5e5f5f5f5f61"},
+    "description": "Complete project documentation",
+    "content": "Write comprehensive documentation for the API endpoints",
+    "completed": false,
+    "user": {"$oid": "65b5f3584f4b5e5f5f5f5f5f"},
+    "createdAt": {"$date": "2024-01-27T00:00:00Z"},
+    "updatedAt": {"$date": "2024-01-27T00:00:00Z"}
+  },
+  {
+    "_id": {"$oid": "65b5f3584f4b5e5f5f5f5f62"},
+    "description": "Fix bug in user authentication",
+    "content": "Investigate and resolve the token expiration issue",
+    "completed": true,
+    "user": {"$oid": "65b5f3584f4b5e5f5f5f5f5f"},
+    "createdAt": {"$date": "2024-01-27T00:00:00Z"},
+    "updatedAt": {"$date": "2024-01-27T00:00:00Z"}
+  },
+  {
+    "_id": {"$oid": "65b5f3584f4b5e5f5f5f5f63"},
+    "description": "Update dependencies",
+    "content": "Review and update all npm packages",
+    "completed": false,
+    "user": {"$oid": "65b5f3584f4b5e5f5f5f5f60"},
+    "createdAt": {"$date": "2024-01-27T00:00:00Z"},
+    "updatedAt": {"$date": "2024-01-27T00:00:00Z"}
+  }
+]
