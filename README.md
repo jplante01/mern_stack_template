@@ -15,7 +15,7 @@ PORT=5050
 
 # Verify db connection in development
 - Seed the database
-  - Start your local mongod instance(This will destroy any collections named `test`)
+  - Start your local mongod instance(This will destroy any dbs named `test`)
   - Verify MONGODB_URI_DEV is set correctly
   - import the seed data. Run from project root:
     - !!DO NOT EXECUTE THIS COMMAND ON YOUR PRODUCTION DB, IT WILL DROP THE DATABASE!!
