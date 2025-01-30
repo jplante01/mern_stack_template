@@ -1,0 +1,21 @@
+The front-end will allow users to create, read, update, and delete tasks. It will have a very simple one-page UI. If no session is detected on loading, a modal will appear that allow the user to login, register, or select a demo account that will store the data in local storage. 
+
+When the user is logged in, the front-end will display a list of tasks. The user can add a new task, edit an existing task, or delete a task. The user can also logout. 
+
+The front-end will use the backend API to perform the CRUD operations on the tasks. The backend API is hosted on a different server and is protected by a JWT token. The frontend will use the fetch API to make requests to the backend API. 
+
+The front-end will use the following technologies:
+- React
+- React Router
+- React Context API
+- Tailwind CSS
+- Vite
+- Fetch API
+- React Query
+- React Hook Form
+- React Toastify
+- React Icons
+- React Loader Spinner
+
+This will be implemented in the ./client folder.
+
