@@ -4,8 +4,8 @@ import cors from "cors";
 import connectDatabase from "./db/connection.js";
 import taskRoutes from "./routes/taskRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import passport from "./config/passport";
-import authRoutes from "./routes/authRoutes";
+import passport from "./config/passport.js";
+import authRoutes from "./routes/authRoutes.js";
 import { apiLimiter } from "./middleware/rateLimiter.js";
 
 const PORT = process.env.PORT || 5050;
