@@ -20,7 +20,9 @@ export default class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return (
         <div className="text-center py-8">
-          <h2 className="text-xl font-semibold text-red-600">Something went wrong</h2>
+          <h2 className="text-xl font-semibold text-red-600">
+            Something went wrong
+          </h2>
           <button
             onClick={() => window.location.reload()}
             className="mt-4 btn-primary"
@@ -33,4 +35,4 @@ export default class ErrorBoundary extends Component {
 
     return this.props.children;
   }
-} 
+}

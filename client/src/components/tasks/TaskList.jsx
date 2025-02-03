@@ -13,11 +13,7 @@ export default function TaskList({ tasks = [], onTaskUpdate, isDemo }) {
   return (
     <div className="mt-6 space-y-4">
       {tasks.map((task) => (
-        <TaskItem
-          key={task.id}
-          task={task}
-          onUpdate={onTaskUpdate}
-        />
+        <TaskItem key={task.id} task={task} onUpdate={onTaskUpdate} />
       ))}
     </div>
   );
@@ -33,4 +29,4 @@ TaskList.propTypes = {
   ),
   onTaskUpdate: PropTypes.func.isRequired,
   isDemo: PropTypes.bool.isRequired,
-}; 
+};

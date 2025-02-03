@@ -1,20 +1,13 @@
-import mongoose from 'mongoose';
-
-// Select the appropriate DB connection string for environment
-const isProduction = process.env.NODE_ENV === 'production';
-const mongoDB = isProduction
-  ? process.env.MONGODB_URI_PROD
-  : process.env.MONGODB_URI_DEV;
+import mongoose from "mongoose";
 
 const connectDatabase = async () => {
   try {
-    await mongoose.connect(mongoDB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log('MongoDB connected successfully');
+    const conn = await mongoose.connect(
+      process.env.MONGODB_URI || "mongodb://localhost:27017/taskmanager",
+    );
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error('MongoDB connection error:', error);
+    console.error(`Error: ${error.message}`);
     process.exit(1);
   }
 };

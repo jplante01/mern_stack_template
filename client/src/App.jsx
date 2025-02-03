@@ -20,7 +20,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
           <TaskManager />
-          <ToastContainer 
+          <ToastContainer
             position="bottom-right"
             autoClose={3000}
             hideProgressBar={false}
