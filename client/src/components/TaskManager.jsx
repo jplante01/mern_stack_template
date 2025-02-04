@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import AuthModal from './auth/AuthModal';
 import TaskList from './tasks/TaskList';
@@ -10,18 +9,28 @@ import LoadingSpinner from './layout/LoadingSpinner';
 
 export default function TaskManager() {
   const { token, isDemo } = useAuth();
+  const [tasks, setTasks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const {
-    data: tasks,
-    isLoading,
-    isError,
-    error,
-    refetch,
-  } = useQuery({
-    queryKey: ['tasks', isDemo],
-    queryFn: () => taskService.getAllTasks(isDemo),
-    enabled: !!(token || isDemo),
-  });
+  const fetchTasks = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const data = await taskService.getAllTasks(isDemo);
+      setTasks(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (token || isDemo) {
+      fetchTasks();
+    }
+  }, [token, isDemo]);
 
   if (!token && !isDemo) {
     return <AuthModal />;
@@ -31,15 +40,19 @@ export default function TaskManager() {
     <div className="min-h-screen bg-gray-100">
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <TaskForm onSuccess={refetch} isDemo={isDemo} />
+        <TaskForm onSuccess={fetchTasks} isDemo={isDemo} />
         {isLoading ? (
           <LoadingSpinner />
-        ) : isError ? (
+        ) : error ? (
           <div className="text-red-600 text-center py-8">
-            Error: {error.message}
+            Error: {error}
           </div>
         ) : (
-          <TaskList tasks={tasks} onTaskUpdate={refetch} isDemo={isDemo} />
+          <TaskList 
+            tasks={tasks} 
+            onTaskUpdate={fetchTasks} 
+            isDemo={isDemo} 
+          />
         )}
       </main>
     </div>
