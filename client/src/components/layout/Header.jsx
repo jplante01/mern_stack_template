@@ -10,15 +10,15 @@ export default function Header({ onTaskCreate, isDemo }) {
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl font-semibold text-gray-800">Task Manager</h1>
           <div className="flex items-center gap-4">
-            {authDemo && (
+            <TaskForm onSuccess={onTaskCreate} isDemo={isDemo} />
+            {/* {authDemo && (
               <span className="text-sm text-gray-600">Demo Mode</span>
-            )}
+            )} */}
             <button onClick={logout} className="btn-secondary">
               Logout
             </button>
           </div>
         </div>
-        <TaskForm onSuccess={onTaskCreate} isDemo={isDemo} />
       </div>
     </header>
   );
