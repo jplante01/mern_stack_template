@@ -8,7 +8,9 @@ export default function Header({ onTaskCreate, isDemo }) {
     <header className="bg-neutral-50 border-b-2 border-gray-400">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-semibold text-gray-800">Task Manager</h1>
+          <h1 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 pb-1">
+            TaskManager()
+          </h1>
           <div className="flex items-center gap-4">
             <TaskForm onSuccess={onTaskCreate} isDemo={isDemo} />
             {/* {authDemo && (
