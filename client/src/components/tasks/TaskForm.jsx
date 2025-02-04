@@ -22,8 +22,8 @@ export default function TaskForm({ onSuccess, isDemo }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-white ">
-      <div className="flex gap-2">
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex gap-4">
         <input
           type="text"
           {...register('title', {
@@ -36,11 +36,7 @@ export default function TaskForm({ onSuccess, isDemo }) {
           placeholder="Add a new task..."
           className="input flex-1"
         />
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="btn-primary"
-        >
+        <button type="submit" disabled={isSubmitting} className="btn-primary">
           {isSubmitting ? 'Adding...' : 'Add Task'}
         </button>
       </div>
@@ -49,4 +45,4 @@ export default function TaskForm({ onSuccess, isDemo }) {
       )}
     </form>
   );
-} 
+}

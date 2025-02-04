@@ -5,10 +5,10 @@ export default function Header({ onTaskCreate, isDemo }) {
   const { logout, isDemo: authDemo } = useAuth();
 
   return (
-    <header className="bg-white shadow">
+    <header className="bg-neutral-50 border-b-2 border-gray-400">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-semibold text-gray-800">Task Manager</h1>
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-semibold text-gray-800">Task Manager</h1>
           <div className="flex items-center gap-4">
             <TaskForm onSuccess={onTaskCreate} isDemo={isDemo} />
             {/* {authDemo && (

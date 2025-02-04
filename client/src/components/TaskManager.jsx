@@ -36,7 +36,7 @@ export default function TaskManager() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-neutral-50">
       <Header onTaskCreate={fetchTasks} isDemo={isDemo} />
       <main className="container mx-auto px-4 py-8">
         {isLoading ? (
