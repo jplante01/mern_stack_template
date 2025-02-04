@@ -22,7 +22,7 @@ export default function TaskForm({ onSuccess, isDemo }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow rounded-lg p-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="bg-white ">
       <div className="flex gap-2">
         <input
           type="text"
