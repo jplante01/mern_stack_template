@@ -57,8 +57,8 @@ export default function TaskItem({ task, onUpdate, isDemo }) {
           </button>
         </div>
       ) : (
-        <div className="flex justify-between items-center border-b border-gray-400 pb-2">
-          <span className="text-gray-800">{task.title}</span>
+        <div className="flex justify-between items-end border-b border-gray-400 pb-2">
+          <span className="text-gray-800 text-lg">{task.title}</span>
           <div className="flex gap-2">
             <button
               onClick={() => setIsEditing(true)}
