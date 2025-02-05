@@ -23,7 +23,7 @@ export default function TaskForm({ onSuccess, isDemo }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex gap-4">
+      <div className="flex gap-4 relative">
         <input
           type="text"
           {...register('title', {
@@ -39,10 +39,12 @@ export default function TaskForm({ onSuccess, isDemo }) {
         <button type="submit" disabled={isSubmitting} className="btn-primary">
           {isSubmitting ? 'Adding...' : 'Add Task'}
         </button>
+        {errors.title && (
+          <p className="absolute -bottom-6 left-0 text-sm text-red-600">
+            {errors.title.message}
+          </p>
+        )}
       </div>
-      {errors.title && (
-        <p className="mt-1 text-sm text-red-600">{errors.title.message}</p>
-      )}
     </form>
   );
 }
