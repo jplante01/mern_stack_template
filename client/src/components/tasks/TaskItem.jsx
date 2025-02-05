@@ -34,7 +34,7 @@ export default function TaskItem({ task, onUpdate, isDemo }) {
   };
 
   return (
-    <div className="p-4">
+    <div className="">
       {isEditing ? (
         <div className="flex gap-2">
           <input
@@ -57,7 +57,7 @@ export default function TaskItem({ task, onUpdate, isDemo }) {
           </button>
         </div>
       ) : (
-        <div className="flex justify-between items-end border-b border-gray-400 pb-2">
+        <div className="flex justify-between items-end border-b-2 border-gray-400 p-4">
           <span className="text-gray-800 text-lg">{task.title}</span>
           <div className="flex gap-2">
             <button
